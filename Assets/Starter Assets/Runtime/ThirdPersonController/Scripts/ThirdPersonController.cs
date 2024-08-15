@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using UnityEditor.Build.Content;
+using UnityEngine;
 #if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
 #endif
@@ -139,7 +140,7 @@ namespace StarterAssets
         private void Start()
         {
             _cinemachineTargetYaw = CinemachineCameraTarget.transform.rotation.eulerAngles.y;
-            
+
             _hasAnimator = TryGetComponent(out _animator);
             _controller = GetComponent<CharacterController>();
             _input = GetComponent<StarterAssetsInputs>();
@@ -158,6 +159,10 @@ namespace StarterAssets
 
         private void Update()
         {
+
+            if (GameManager.instance.isReady)
+                return;
+
             _hasAnimator = TryGetComponent(out _animator);
 
             JumpAndGravity();
@@ -220,7 +225,7 @@ namespace StarterAssets
             // set target speed based on move speed, sprint speed and if sprint is pressed
             float targetSpeed = _input.sprint ? SprintSpeed : MoveSpeed;
 
-            if(isAimMove || isReroad)
+            if (isAimMove || isReroad)
             {
                 targetSpeed = MoveSpeed;
             }
@@ -271,7 +276,7 @@ namespace StarterAssets
 
                 // rotate to face input direction relative to camera position
 
-                if(!isAimMove)
+                if (!isAimMove)
                 {
                     transform.rotation = Quaternion.Euler(0.0f, rotation, 0.0f);
 

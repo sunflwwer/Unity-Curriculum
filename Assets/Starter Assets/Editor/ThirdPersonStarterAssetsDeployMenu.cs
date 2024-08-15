@@ -3,6 +3,7 @@ using System.Linq;
 using System.Text;
 using UnityEditor;
 using UnityEngine;
+using StarterAssets;
 
 namespace StarterAssets
 {
