@@ -41,6 +41,5 @@
 
 ## 🔗 참고 링크
 
-- [GitHub](https://github.com/sunflwwer/Unity-Curriculum)
 - [프로젝트 노션](https://app.notion.com/p/Escape-1814ceab4f8281839527c60928fc8fe7?source=copy_link)
 - [빌드 파일 다운로드](https://drive.google.com/file/d/1823Xwzf7_VlFU3NC84MTbnf8qbnx85nU/view)
